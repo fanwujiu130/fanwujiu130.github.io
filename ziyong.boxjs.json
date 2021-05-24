@@ -386,7 +386,7 @@
 				"val": "",
 				"type": "textarea",
 				"desc": "JSON 格式"
-			}
+			},
 			{
 				"id": "UrlFC",
 				"name": "url数据",
