@@ -1,1452 +1,2903 @@
 {
+
 	"id": "xiebian.app.sub",
+
 	"name": "自用订阅",
+
 	"author": "@范无救",
+
 	"icon": "https://raw.githubusercontent.com/fanwujiu130/fanwujiu130.github.io/main/box.JPG",
+
 	"repo": "http://fanwujiu130.github.io",
+
 	"apps": [{
+
 			"id": "fhxz",
+
 			"name": "富豪小镇",
+
 			"keys": ["fhxzurl", "fhxzhd"],
+
 			"author": "@ningmeng",
+
 			"repo": "http://nm66.top/fhxz.js",
+
 			"icons": ["http://nm66.top/1.jpg", "http://nm66.top/1.jpg"],
+
 			"script": "http://nm66.top/fhxz.js"
+
 		},
+
 		{
+
 			"id": "kxdfs",
+
 			"name": "开心大丰收",
+
 			"keys": ["kxdfsheader"],
+
 			"author": "@ningmeng",
+
 			"repo": "http://nm66.top/kxdfs.js",
+
 			"icons": ["http://nm66.top/1.jpg", "http://nm66.top/1.jpg"],
+
 			"script": "http://nm66.top/kxdfs.js"
+
 		},
+
 		{
+
 			"id": "qmlzc",
+
 			"name": "全民来找茬",
+
 			"keys": ["xnmurl", "xnmheader"],
+
 			"author": "@ningmeng",
+
 			"repo": "http://nm66.top/qmlzc.js",
+
 			"icons": ["http://nm66.top/1.jpg", "http://nm66.top/1.jpg"],
+
 			"script": "http://nm66.top/qmlzc.js"
+
 		},
+
 		{
+
 			"id": "youthCk",
+
 			"name": "中青数据",
+
 			"keys": ["youthheader_zq", "read_zq", "readtime_zq"],
+
 			"descs_html": [
+
 				"多账号脚本地址【<a href=\"https://raw.githubusercontent.com/ztxtop/x/main/youth.js\">中青看点极速版</a>】",
+
 				"中青多账号ck抓取步骤：",
+
 				"1、boxjs中指定抓包账号，如：2",
+
 				"2、NE工具订阅配置【<a href=\"https://raw.githubusercontent.com/ztxtop/x/main/rewrite-zq.plugin\">中青看点</a>】【<a href=\"https://raw.githubusercontent.com/ztxtop/x/main/rewrite-zqkkz.plugin\">中青看看赚、浏览赚</a>】",
+
 				"  ⚠️订阅为Loon的插件，QX需开启解析器才能使用",
+
 				"3、打开中青APP，进入“我的”=>“任务中心”抓取 youthheader_zq 数据、 进入任务中心里的看看赚，点任务进入页面即可获取看看赚数据、 进入看看赚页面顶部的浏览赚页面，点任务跳转浏览器时可获取浏览赚数据（中青app有可能不发起任务开始请求，那将无法抓包）",
+
 				"4、在首页找个视频看看，超过1分钟后返回上一页面可获取时长数据，首次获取或时长数据记录的有效时间大于60秒时才会进行通知提醒",
+
 				"备注：看看赚的任务可能失效过期，建议：1、在看看赚配置中选则移除失败数据；2、看看赚任务一天跑两次；3、第一二次任务执行之间，可再回中青app看看赚任务页面查看下是否有新任务"
+
 			],
+
 			"author": "@ztxtop",
+
 			"settings": [{
+
 				"id": "ckFormat",
+
 				"val": "",
+
 				"name": "新CK格式",
+
 				"type": "boolean",
+
 				"desc": "数据是否按新格式存储"
+
 			}, {
+
 				"id": "zqSuffix",
+
 				"name": "抓包账号",
+
 				"val": "1",
+
 				"type": "number",
+
 				"desc": "指定抓取的数据包用于哪个账号，设置数值如：1、2、3..."
+
 			}, {
+
 				"id": "zqExecAc",
+
 				"name": "中青执行账号",
+
 				"val": "1",
+
 				"type": "text",
+
 				"desc": "设置中青的执行账号，多个账号用半角逗号分隔，如：1,2,4"
+
 			}],
+
 			"repo": "https://github.com/ztxtop/x/blob/main/youth.js",
+
 			"icons": ["https://gitee.com/the-eldest-is-xu/color/raw/master/youth.png", "https://gitee.com/the-eldest-is-xu/color/raw/master/youth.png"],
+
 			"script": "https://raw.githubusercontent.com/ztxtop/x/main/youth.js"
+
 		},
+
 		{
+
 			"id": "youthNeRead",
+
 			"name": "中青阅读",
+
 			"descs_html": [
+
 				"中青阅读脚本地址【<a href=\"https://raw.githubusercontent.com/ztxtop/x/main/zqread.js\">中青阅读</a>】",
+
 				"注意：因此脚本使用的阅读数据存储位置与songyangzz大佬的不同，所以需搭配【<a href=\"https://raw.githubusercontent.com/ztxtop/x/main/rewrite-zqread.plugin\">阅读数据抓包订阅</a>】抓取的阅读数据使用"
+
 			],
+
 			"author": "@ztxtop",
+
 			"settings": [{
+
 				"id": "readMode",
+
 				"name": "执行模式（点击查看设置说明）",
+
 				"val": "0",
+
 				"type": "text",
+
 				"desc": "0-循环阅读：任务执行时间需大于21秒\n1-去重排序：根据响应数据判断重复并将视频往前排，依此优化阅读效率（可用半角逗号间隔该模式运行的账号，如账号一跟账号三才执行去重排序：1,1,3）\n3-备份数据：根据指定的备份格式，将要备份的数据以log的形式打印出来（高版本qx限制了打印日志长度，需使用其它方式导出）\n4-清空所有中青数据"
+
 			}, {
+
 				"id": "zqReadScheme",
+
 				"name": "阅读数据备份输出格式",
+
 				"val": "DF",
+
 				"type": "radios",
+
 				"items": [{
+
 						"key": "QX",
+
 						"label": "QX持久化数据代码"
+
 					},
+
 					{
+
 						"key": "LS",
+
 						"label": "Loon&Surge持久化数据代码"
+
 					},
+
 					{
+
 						"key": "GA",
+
 						"label": "Github Actions使用的以&分隔数据"
+
 					},
+
 					{
+
 						"key": "DF",
+
 						"label": "Default"
+
 					}
+
 				]
+
 			}, {
+
 				"id": "read_count",
+
 				"name": "账号1总阅读数",
+
 				"val": "0",
+
 				"type": "number",
+
 				"desc": "账号1阅读数据总行数"
+
 			}],
+
 			"repo": "https://github.com/ztxtop/x/blob/main/zqread.js",
+
 			"icons": ["https://gitee.com/the-eldest-is-xu/color/raw/master/youth.png", "https://gitee.com/the-eldest-is-xu/color/raw/master/youth.png"],
+
 			"script": "https://raw.githubusercontent.com/ztxtop/x/main/youth.js",
+
 			"scripts": [{
+
 				"name": "自动阅读",
+
 				"script": "https://raw.githubusercontent.com/ztxtop/x/main/zqread.js"
+
 			}]
+
 		},
+
 		{
+
 			"author": "@sunert",
+
 			"descs_html": [
+
 				"<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://github.com/Sunert/Scripts/raw/master/TaskConf/youth/readme.md\">配置说明</a></h4>",
+
 				"<br />",
+
 				"<p>其中zq_nick、zqcash和zqcard为昵称、提现金额和早起打卡开关，无需另外获取，相关项设置后自动生成，cashurl_zq和cashbody_zq为提现请求，获取后方可自动提现，可选</p>"
+
 			],
+
 			"keys": [
+
 				"zq_nick",
+
 				"youthheader_zq",
+
 				"read_zq",
+
 				"readtime_zq",
+
 				"cashurl_zq",
+
 				"cashbody_zq",
+
 				"zqcash",
+
 				"zqcard"
+
 			],
+
 			"repo": "https://github.com/Sunert/Scripts/blob/master/Task/youth.js",
+
 			"id": "youth",
+
 			"script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js",
+
 			"settings": [{
+
 					"id": "zqcard",
+
 					"val": "false",
+
 					"name": "打卡赚钱",
+
 					"type": "boolean",
+
 					"desc": "每日打卡报名及早起打卡"
+
 				},
+
 				{
+
 					"id": "zqtime",
+
 					"val": "05",
+
 					"name": "打卡时间",
+
 					"type": "number",
+
 					"desc": "每日早起打卡时间"
+
 				},
+
 				{
+
 					"id": "delay_rotary_zq",
+
 					"val": "10",
+
 					"name": "转盘时间间隔",
+
 					"type": "number",
+
 					"desc": "间隔时间设置，如1秒填1即可"
+
 				},
+
 				{
+
 					"id": "notifytimes",
+
 					"val": "",
+
 					"name": "通知频率 (点击查看设置说明)",
+
 					"type": "number",
+
 					"desc": "设定通知频率，前三次为全部通知，之后转盘次数/设定频率整除时通知，如设置0为无通知，设置1为全部通知，设置其他数可整除余0时通知，默认值50"
+
 				},
+
 				{
+
 					"id": "zqcash",
+
 					"val": "30",
+
 					"name": "提现金额",
+
 					"type": "radios",
+
 					"desc": "自动提现金额需和获取提现请求保持一致",
+
 					"items": [{
+
 							"key": "10",
+
 							"label": "10元"
+
 						},
+
 						{
+
 							"key": "30",
+
 							"label": "30元"
+
 						},
+
 						{
+
 							"key": "100",
+
 							"label": "100元"
+
 						}
+
 					]
+
 				}
+
 			],
+
 			"name": "中青看点",
+
 			"icons": [
+
 				"https://gitee.com/the-eldest-is-xu/color/raw/master/youth.png",
+
 				"https://gitee.com/the-eldest-is-xu/color/raw/master/youth.png"
+
 			]
+
 		},
+
 		{
+
 			"author": "@sunert",
+
 			"keys": [
+
 				"youth_start",
+
 				"youth_look"
+
 			],
+
 			"repo": "https://github.com/Sunert/Scripts/blob/master/Task/youth_gain.js",
+
 			"id": "youthGain",
+
 			"script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth_gain.js",
+
 			"name": "中青浏览赚&看看赚",
+
 			"icons": [
+
 				"https://gitee.com/the-eldest-is-xu/color/raw/master/youth.png",
+
 				"https://gitee.com/the-eldest-is-xu/color/raw/master/youth.png"
+
 			]
+
 		},
+
 		{
+
 			"author": "@sunert",
+
 			"keys": [
+
 				"youth_autoread",
+
 				"autotime_zq"
+
 			],
+
 			"settings": [{
+
 				"id": "youth_cut",
+
 				"val": false,
+
 				"name": "缩减请求",
+
 				"type": "boolean",
+
 				"desc": "自动删除收益为0或者错误的阅读请求，使用完后请立即关闭，避免清空阅读请求"
+
 			}],
+
 			"repo": "https://github.com/Sunert/Scripts/blob/master/Task/Youth_Read.js",
+
 			"id": "youthRead",
+
 			"script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js",
+
 			"name": "中青自动阅读",
+
 			"icons": [
+
 				"https://gitee.com/the-eldest-is-xu/color/raw/master/youth.png",
+
 				"https://gitee.com/the-eldest-is-xu/color/raw/master/youth.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jddj_fruit",
+
 			"name": "京东到家果园任务",
+
 			"keys": [
+
 				"jddj_cookies"
+
 			],
+
 			"descs_html": [
+
 				"多个用英文逗号(,)分开"
+
 			],
+
 			"settings": [{
+
 				"id": "jddj_cookies",
+
 				"name": "CK列表",
+
 				"val": "",
+
 				"type": "textarea",
+
 				"autoGrow": true,
+
 				"rows": 8,
+
 				"desc": "CK 列表 "
+
 			}],
+
 			"icons": [
+
 				"https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png",
+
 				"https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png"
+
 			],
+
 			"author": "@passerby-b",
+
 			"repo": "https://gitee.com/passerby-b/javascript/raw/master/JD/passerby-b.boxjs.json",
+
 			"script": "https://raw.githubusercontent.com/passerby-b/JDDJ/main/jddj_fruit.js"
+
 		},
+
 		{
+
 			"id": "jddj_bean",
+
 			"name": "京东到家鲜豆任务",
+
 			"keys": [
+
 				"jddj_cookies"
+
 			],
+
 			"icons": [
+
 				"https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png",
+
 				"https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png"
+
 			],
+
 			"author": "@passerby-b",
+
 			"repo": "https://gitee.com/passerby-b/javascript/raw/master/JD/passerby-b.boxjs.json",
+
 			"script": "https://raw.githubusercontent.com/passerby-b/JDDJ/main/jddj_bean.js"
+
 		},
+
 		{
+
 			"id": "jddj_plantBeans",
+
 			"name": "京东到家鲜豆庄园",
+
 			"keys": [
+
 				"jddj_cookies"
+
 			],
+
 			"icons": [
+
 				"https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png",
+
 				"https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png"
+
 			],
+
 			"author": "@passerby-b",
+
 			"repo": "https://gitee.com/passerby-b/javascript/raw/master/JD/passerby-b.boxjs.json",
+
 			"script": "https://raw.githubusercontent.com/passerby-b/JDDJ/main/jddj_plantBeans.js"
+
 		},
+
 		{
+
 			"id": "jddj_getPoints",
+
 			"name": "京东到家鲜豆庄园收水滴",
+
 			"keys": [
+
 				"jddj_cookies"
+
 			],
+
 			"icons": [
+
 				"https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png",
+
 				"https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png"
+
 			],
+
 			"author": "@passerby-b",
+
 			"repo": "https://gitee.com/passerby-b/javascript/raw/master/JD/passerby-b.boxjs.json",
+
 			"script": "https://raw.githubusercontent.com/passerby-b/JDDJ/main/jddj_fruit_collectWater.js"
+
 		},
+
 		{
+
 			"id": "jddj_fruit_collectWater",
+
 			"name": "京东到家果园水车自动收水滴",
+
 			"keys": [
+
 				"jddj_cookies"
+
 			],
+
 			"icons": [
+
 				"https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png",
+
 				"https://gitee.com/passerby-b/javascript/raw/master/icon/jddj.png"
+
 			],
+
 			"author": "@passerby-b",
+
 			"repo": "https://gitee.com/passerby-b/javascript/raw/master/JD/passerby-b.boxjs.json",
+
 			"script": "https://raw.githubusercontent.com/passerby-b/JDDJ/main/jddj_fruit_collectWater.js"
+
 		},
+
 		{
+
 			"id": "gistBackup",
+
 			"name": "gist 备份",
+
 			"keys": [
+
 				"@gist.token",
+
 				"@gist.username"
+
 			],
+
 			"author": "@dompling",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/Github.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/Github.png"
+
 			],
+
 			"descs_html": [
+
 				"Token的获取方式:",
+
 				"头像菜单->\n      Settings ->\n      Developer settings ->\n      Personal access tokens ->\n      Generate new token ->\n      在里面找到 gist 勾选提交"
+
 			],
+
 			"scripts": [{
+
 					"name": "备份 Gist",
+
 					"script": "https://raw.githubusercontent.com/dompling/Script/master/gist/backup.js"
+
 				},
+
 				{
+
 					"name": "从 Gist 恢复",
+
 					"script": "https://raw.githubusercontent.com/dompling/Script/master/gist/restore.js"
+
 				}
+
 			],
+
 			"settings": [{
+
 					"id": "@gist.username",
+
 					"name": "用户名",
+
 					"val": null,
+
 					"type": "text",
+
 					"placeholder": "github 用户名",
+
 					"desc": "必填"
+
 				},
+
 				{
+
 					"id": "@gist.token",
+
 					"name": "Personal access tokens",
+
 					"val": null,
+
 					"type": "text",
+
 					"placeholder": "github personal access tokens",
+
 					"desc": "必填"
+
 				}
+
 			]
+
 		},
+
 		{
+
 			"id": "elongcash",
+
 			"name": "同程小猪",
+
 			"keys": ["elongcash", "elongcashkey"],
+
 			"settings": [
-	    {
-				"id": "elongcash",
-				"name": "Cookie数据",
-				"val": "",
-				"type": "textarea",
-				"desc": "JSON 格式"
-			}
-	  ],
+
+				{
+
+					"id": "elongcash",
+
+					"name": "Cookie数据",
+
+					"val": "",
+
+					"type": "textarea",
+
+					"desc": "JSON 格式"
+
+				}
+
+			],
+
 			"author": "@cenbomin",
+
 			"repo": ["https://raw.githubusercontent.com/CenBoMin/nio"],
+
 			"script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELONGCASH/elongcash.js",
+
 			"icons": ["https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELONGCASH/120.png", "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELONGCASH/120.png"]
+
 		},
+
 		{
+
 			"id": "zsfc",
+
 			"name": "掌上飞车",
+
 			"keys": ["UrlFC", "CookieFC"],
+
 			"settings": [
-	    {
-				"id": "CookieFC",
-				"name": "Cookie数据",
-				"val": "",
-				"type": "textarea",
-				"desc": "JSON 格式"
-			},
-			{
-				"id": "UrlFC",
-				"name": "url数据",
-				"val": "",
-				"type": "textarea",
-				"desc": "JSON 格式"
-			}
-	  ],
+
+				{
+
+					"id": "CookieFC",
+
+					"name": "Cookie数据",
+
+					"val": "",
+
+					"type": "textarea",
+
+					"desc": "JSON 格式"
+
+				}
+
+				{
+
+					"id": "UrlFC",
+
+					"name": "url数据",
+
+					"val": "",
+
+					"type": "textarea",
+
+					"desc": "JSON 格式"
+
+				}
+
+			],
+
 			"author": "@xba",
+
 			"repo": ["https://github.com/chavyleung/scripts/blob/master/zsfc/zsfc.js"],
+
 			"script": "https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js",
+
 			"icons": ["https://raw.githubusercontent.com/fanwujiu130/fanwujiu130.github.io/main/zsfc.png", "https://raw.githubusercontent.com/fanwujiu130/fanwujiu130.github.io/main/zsfc.png"]
+
 		},
+
 		{
+
 			"id": "helpbang",
+
 			"name": "互利帮",
+
 			"keys": ["helpbang", "helpbangkey"],
+
 			"settings": [
-			{
-				"id": "helpbang",
-				"name": "Cookie数据",
-				"val": "",
-				"type": "textarea",
-				"desc": "JSON 格式"
-			}
-		],
+
+				{
+
+					"id": "helpbang",
+
+					"name": "Cookie数据",
+
+					"val": "",
+
+					"type": "textarea",
+
+					"desc": "JSON 格式"
+
+				}
+
+			],
+
 			"author": "@cenbomin",
+
 			"repo": ["https://raw.githubusercontent.com/CenBoMin/GithubSync"],
+
 			"script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/CONGHUA/chonghua.js",
+
 			"icons": ["https://raw.githubusercontent.com/fanwujiu130/ac/main/66AF6E8B-894C-4F5B-91A4-DD35A735D756.png",
+
 				"https://raw.githubusercontent.com/fanwujiu130/ac/main/66AF6E8B-894C-4F5B-91A4-DD35A735D756.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "ximei",
+
 			"name": "西梅",
+
 			"keys": ["ximeiurl", "ximeihd"],
+
 			"author": "@feizao",
+
 			"repo": "https://github.com/age174/-/blob/main/ximei.js",
+
 			"icons": ["https://ae01.alicdn.com/kf/Ucd02ea79ef22473daf3576486d134509Q.jpg", "https://ae01.alicdn.com/kf/Ucd02ea79ef22473daf3576486d134509Q.jpg"],
+
 			"script": "https://raw.githubusercontent.com/age174/-/main/ximei.js"
+
 		},
+
 		{
+
 			"id": "lhws",
+
 			"name": "落花无生",
+
 			"keys": ["lhwsurl", "lhwshd", "lhwsbody"],
+
 			"author": "@feizao",
+
 			"repo": "https://github.com/age174/-/blob/main/lhws.js",
+
 			"icons": ["https://ae01.alicdn.com/kf/U7f67ec3bd2d848a59d72a1807dc9e324r.jpg", "https://ae01.alicdn.com/kf/U7f67ec3bd2d848a59d72a1807dc9e324r.jpg"],
+
 			"script": "https://raw.githubusercontent.com/age174/-/main/lhws.js"
+
 		},
+
 		{
+
 			"id": "JD_UA",
+
 			"name": "自定义京东脚本的UserAgent",
+
 			"keys": [
+
 				"JDUA"
+
 			],
+
 			"descs_html": [
+
 				"自行抓包京东APP获得，UserAgent类似下面：",
+
 				"jdapp;iPhone;9.3.0;14.2;88732f840b77821b345bf07fd71f609e6ff12f43;network/4g;ADID/0E38E9F1-4B4C-40A4-A479-DD15E58A5623;supportApplePay/0;hasUPPay/0;hasOCPay/0;model/iPhone11,8;addressid/2005183373;supportBestPay/0;appBuild/167436;pushNoticeIsOpen/0;jdSupportDarkMode/0;pv/142.46;apprpd/CouponCenter;ref/NewCouponCenterViewController;psq/44;ads/;psn/88732f840b77821b345bf07fd71f609e6ff12f43|551;jdv/0|kong|t_1000170135|tuiguang|notset|1607732510603|1607732510;adk/;app_device/IOS;pap/JA2015_311210|9.2.5|IOS 14.2;Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"
+
 			],
+
 			"settings": [{
+
 				"id": "JDUA",
+
 				"name": "自定义京东脚本的UserAgent",
+
 				"val": "",
+
 				"type": "text",
+
 				"desc": "不懂不知不会UserAgent的请不要随意填写内容，如需填写使用建议使用京东APP的UserAgent"
+
 			}],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png",
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "JS_UA",
+
 			"name": "自定义京东极速版脚本的UserAgent",
+
 			"keys": [
+
 				"JS_UA"
+
 			],
+
 			"descs_html": [
+
 				"自行抓包京东极速版APP获得，UserAgent类似下面：",
+
 				"jdltapp;iPad;3.1.0;14.4;network/wifi;Mozilla/5.0 (iPad; CPU OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"
+
 			],
+
 			"settings": [{
+
 				"id": "JS_UA",
+
 				"name": "自定义京东极速版脚本的UserAgent",
+
 				"val": "",
+
 				"type": "text",
+
 				"desc": "不懂不知不会UserAgent的请不要随意填写内容，如需填写使用建议使用京东APP的UserAgent"
+
 			}],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png",
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jd_Joy",
+
 			"name": "宠汪汪",
+
 			"keys": [],
+
 			"settings": [{
+
 					"id": "jdJoyNotify",
+
 					"name": "静默运行",
+
 					"val": true,
+
 					"type": "boolean",
+
 					"desc": "运行宠汪汪(jd_joy.js)脚本时不发出系统弹窗通知"
+
 				},
+
 				{
+
 					"id": "jdJoyStealNotify",
+
 					"name": "静默运行",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "运行宠汪汪(jd_joy_steal.js)脚本时不发出系统弹窗通知"
+
 				},
+
 				{
+
 					"id": "joyFeedCount",
+
 					"name": "每次喂养数量（默认10g）",
+
 					"val": "10",
+
 					"type": "radios",
+
 					"desc": "每次喂养狗粮克数(默认10g)",
+
 					"items": [{
+
 							"key": "0",
+
 							"label": "不喂食"
+
 						},
+
 						{
+
 							"key": "10",
+
 							"label": "消耗10g"
+
 						},
+
 						{
+
 							"key": "20",
+
 							"label": "消耗20g"
+
 						},
+
 						{
+
 							"key": "40",
+
 							"label": "消耗40g"
+
 						},
+
 						{
+
 							"key": "80",
+
 							"label": "消耗80g"
+
 						}
+
 					]
+
 				}
+
 			],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"script": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jdcww_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jdcww.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jd_Joy_Reward",
+
 			"name": "宠汪汪积分兑换京豆",
+
 			"keys": [],
+
 			"settings": [{
+
 					"id": "jdJoyRewardNotify",
+
 					"name": "静默运行",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "开启后成功兑换到京豆也不发出系统弹窗通知"
+
 				},
+
 				{
+
 					"id": "joyRewardName",
+
 					"name": "是否兑换京豆",
+
 					"val": "1",
+
 					"type": "radios",
+
 					"desc": "默认开启兑换，如不想兑换可选择不兑换",
+
 					"items": [{
+
 							"key": "0",
+
 							"label": "不兑换奖品(选择此项将不兑换奖品)"
+
 						},
+
 						{
+
 							"key": "1",
+
 							"label": "兑换20京豆"
+
 						},
+
 						{
+
 							"key": "500",
+
 							"label": "兑换500京豆"
+
 						},
+
 						{
+
 							"key": "1000",
+
 							"label": "兑换1000京豆"
+
 						}
+
 					]
+
 				}
+
 			],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"script": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_reward.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jdcww_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jdcww.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jd_MoneyTree",
+
 			"name": "京东摇钱树",
+
 			"keys": [],
+
 			"settings": [{
+
 					"id": "jdMoneyTreeNotify",
+
 					"name": "静默运行",
+
 					"val": true,
+
 					"type": "boolean",
+
 					"desc": "运行京东摇钱树脚本时不发出系统弹窗通知"
+
 				},
+
 				{
+
 					"id": "MONEY_TREE_SELL_FRUIT",
+
 					"name": "是否卖出金果获得金币",
+
 					"val": true,
+
 					"type": "boolean",
+
 					"desc": "是否卖出金果获得金币,金币具有有效期，默认卖出"
+
 				}
+
 			],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"script": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_moneyTree.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jdyqs_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jdyqs.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jdUnsubscribe",
+
 			"name": "取关京东店铺和商品",
+
 			"keys": [
+
 				"jdUnsubscribeStopGoods",
+
 				"jdUnsubscribeStopShop"
+
 			],
+
 			"settings": [{
+
 					"id": "jdUnsubscribeNotify",
+
 					"name": "静默运行",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "运行脚本时不发出系统弹窗通知"
+
 				},
+
 				{
+
 					"id": "jdUnsubscribePageSize",
+
 					"name": "取消已关注商品的数量",
+
 					"val": 10,
+
 					"type": "number",
+
 					"desc": "运行一次脚本取消多少个已关注的商品（默认10个,输入0表示不取关）"
+
 				},
+
 				{
+
 					"id": "jdUnsubscribeShopPageSize",
+
 					"name": "取消已关注店铺的数量",
+
 					"val": 10,
+
 					"type": "number",
+
 					"desc": "运行一次脚本取消多少个已关注的店铺（默认10个,输入0表示不取关）"
+
 				},
+
 				{
+
 					"id": "jdUnsubscribeStopGoods",
+
 					"name": "遇到此商品不再进行取关",
+
 					"val": "",
+
 					"type": "text",
+
 					"desc": "匹配到此处商品后面(包括此商品)不再进行取关(此处内容需去商品详情页长按（自营处）文字拷贝商品信息)"
+
 				},
+
 				{
+
 					"id": "jdUnsubscribeStopShop",
+
 					"name": "遇到此店铺不再进行取关",
+
 					"val": "",
+
 					"type": "text",
+
 					"desc": "匹配到此处店铺后面(包括此店铺)的不再进行取关(此处内容请尽量从头开始输入店铺名称)"
+
 				}
+
 			],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"script": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_unsubscribe.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png",
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jd_SuperMarket",
+
 			"name": "东东超市",
+
 			"keys": [],
+
 			"settings": [{
+
 					"id": "jdSuperMarketNotify",
+
 					"name": "静默运行",
+
 					"val": true,
+
 					"type": "boolean",
+
 					"desc": "运行此脚本时不发出系统弹窗通知"
+
 				},
+
 				{
+
 					"id": "JOIN_PK_TEAM",
+
 					"name": "自动参加作者PK队伍",
+
 					"val": true,
+
 					"type": "boolean",
+
 					"desc": "每次pk活动自动参加作者PK队伍，默认参加"
+
 				},
+
 				{
+
 					"id": "jdSuperMarketLottery",
+
 					"name": "抽奖(招财进宝)",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "运行脚本消耗金币进行抽奖，默认抽奖"
+
 				}
+
 			],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"scripts": [{
+
 				"name": "东东超市",
+
 				"script": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_superMarket.js"
+
 			}],
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jxc_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jxc.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jd_SuperMarket_Reawrd",
+
 			"name": "东东超市兑换奖品",
+
 			"keys": [
+
 				"coinToBeans"
+
 			],
+
 			"desc": "默认不兑换奖品,例如:兑换20京豆输入20,兑换1000京豆输入1000,兑换 柠檬果香洗手液， 输入 柠檬果香洗手液。其他详细的奖品名称去东东超市活动页面查看",
+
 			"settings": [{
+
 					"id": "jdSuperMarketRewardNotify",
+
 					"name": "静默运行",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "开启后成功兑换到奖品不发出系统弹窗通知"
+
 				},
+
 				{
+
 					"id": "coinToBeans",
+
 					"name": "兑换奖品（默认不兑换）",
+
 					"val": "0",
+
 					"type": "text",
+
 					"desc": "输入兑换奖品名称(默认不兑换奖品)"
+
 				}
+
 			],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"scripts": [{
+
 				"name": "东东超市兑换奖品",
+
 				"script": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_blueCoin.js"
+
 			}],
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jxc_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jxc.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "xmSports",
+
 			"name": "小米运动",
+
 			"keys": [
+
 				"xmSportsToken",
+
 				"xmMinStep",
+
 				"xmMaxStep"
+
 			],
+
 			"settings": [{
+
 					"id": "xmSportsToken",
+
 					"name": "小米运动Token",
+
 					"val": "",
+
 					"type": "text",
+
 					"desc": "小米运动登录时获取的token"
+
 				},
+
 				{
+
 					"id": "xmMinStep",
+
 					"name": "最小运动步数",
+
 					"val": "19000",
+
 					"type": "text",
+
 					"desc": "需要修改最小的运动步数的数字,例如:19000"
+
 				},
+
 				{
+
 					"id": "xmMaxStep",
+
 					"name": "最大运动步数",
+
 					"val": "25000",
+
 					"type": "text",
+
 					"desc": "需要修改最小的运动步数的数字,例如:25000"
+
 				}
+
 			],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"script": "https://jdsharedresourcescdn.azureedge.net/jdresource/xmSports.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/xmyd_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/xmyd.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "lxk_jdfactory",
+
 			"name": "东东工厂",
+
 			"keys": [
+
 				"FACTORAY_WANTPRODUCT_NAME"
+
 			],
+
 			"settings": [{
+
 				"id": "FACTORAY_WANTPRODUCT_NAME",
+
 				"name": "心仪商品名称",
+
 				"val": "",
+
 				"type": "text",
+
 				"desc": "请尽量填写完整和别的商品有区分度"
+
 			}],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"script": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jdfactory.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jd_factory_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jd_factory.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jd_jxd",
+
 			"name": "京小兑",
+
 			"keys": [],
+
 			"settings": [{
+
 				"id": "jdJxdExchange",
+
 				"name": "自动把抽奖卷兑换为兑币",
+
 				"val": false,
+
 				"type": "boolean",
+
 				"desc": "自动把抽奖卷兑换为兑币,默认关闭"
+
 			}],
+
 			"author": "@lxk0301",
+
 			"repo": "https://gitee.com/lxk0301/jd_scripts/tree/master",
+
 			"scripts": [{
+
 				"name": "京小兑",
+
 				"script": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jxd.js"
+
 			}],
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jd_jxd_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jd_jxd.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "chavyleung.10086",
+
 			"name": "10086",
+
 			"keys": [
+
 				"chavy_autologin_cmcc",
+
 				"chavy_getfee_cmcc",
+
 				"chavy_tokenurl_10086",
+
 				"chavy_tokenheader_10086",
+
 				"chavy_signurl_10086",
+
 				"chavy_signheader_10086"
+
 			],
+
 			"author": "@wangfei021325, @chavyleung",
+
 			"repo": "https://github.com/chavyleung/scripts/blob/master/10086/10086.js",
+
 			"script": "https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/10086.png",
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Color/10086.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "BAIDU",
+
 			"name": "百度签到",
+
 			"keys": ["chavy_cookie_tieba"],
+
 			"settings": [{
+
 					"id": "CFG_tieba_isOrderBars",
+
 					"name": "按连签排序",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "默认按经验排序"
+
 				},
+
 				{
+
 					"id": "CFG_tieba_maxShowBars",
+
 					"name": "每页显示数",
+
 					"val": 15,
+
 					"type": "number",
+
 					"desc": "每页最显示多少个吧信息"
+
 				},
+
 				{
+
 					"id": "CFG_tieba_maxSignBars",
+
 					"name": "每次并发",
+
 					"val": 5,
+
 					"type": "number",
+
 					"desc": "每次并发签到多少个吧"
+
 				},
+
 				{
+
 					"id": "CFG_tieba_signWaitTime",
+
 					"name": "并发间隔 (毫秒)",
+
 					"val": 2000,
+
 					"type": "number",
+
 					"desc": "每次并发间隔时间"
+
 				}
+
 			],
+
 			"author": "@chavyleung",
+
 			"repo": "https://github.com/chavyleung/scripts/tree/master/tieba",
+
 			"script": "https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/baidu.png",
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Color/baidu.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jx_tokens",
+
 			"name": "京喜tokens",
+
 			"keys": ["jx_tokens"],
+
 			"descs_html": [
+
 				"请勿随意在输入框修改内容，建议通过脚本去获取Token，若要修改，请按照 JSON 数组格式修改。",
+
 				"脚本地址【<a href=\"https://github.com/whyour/hundun/blob/master/quanx/jx_tokens.js\">京喜多账号Token获取</a>】,并按照此脚本注释进行配置"
+
 			],
+
 			"settings": [{
+
 				"id": "jx_tokens",
+
 				"name": "Tokens",
+
 				"val": "",
+
 				"type": "textarea",
+
 				"autoGrow": true,
+
 				"rows": 8,
+
 				"desc": "Tokens 列表 (JSON 数组格式)"
+
 			}],
+
 			"author": "@whyour",
+
 			"repo": "https://github.com/whyour/hundun/blob/master/quanx/jx_tokens.js",
+
 			"script": "https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jx_sign_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jx_sign.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "NeteaseMusic",
+
 			"name": "网易云音乐",
+
 			"keys": ["chavy_cookie_neteasemusic"],
+
 			"settings": [{
+
 					"id": "CFG_neteasemusic_retryCnt",
+
 					"name": "重试次数",
+
 					"val": 10,
+
 					"type": "text",
+
 					"desc": "一直尝试签到直至出现“重复签到”标识!"
+
 				},
+
 				{
+
 					"id": "CFG_neteasemusic_retryInterval",
+
 					"name": "重试间隔 (毫秒)",
+
 					"val": 500,
+
 					"type": "text",
+
 					"desc": "每次重试间隔时间 (毫秒)！"
+
 				}
+
 			],
+
 			"author": "@chavyleung",
+
 			"repo": "https://github.com/chavyleung/scripts/tree/master/neteasemusic",
+
 			"script": "https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/neteasemusic.png",
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Color/neteasemusic.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "feng",
+
 			"name": "威锋网",
+
 			"keys": ["chavy_login_feng"],
+
 			"author": "@wangfei021325, @chavyleung",
+
 			"repo": "https://github.com/chavyleung/scripts/tree/master/feng",
+
 			"script": "https://raw.githubusercontent.com/chavyleung/scripts/master/feng/feng.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/feng.png",
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Color/feng.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "WPS",
+
 			"name": "WPS",
+
 			"keys": ["chavy_signhomeurl_wps", "chavy_signhomeheader_wps"],
+
 			"settings": [{
+
 				"id": "CFG_wps_inviteTime",
+
 				"name": "邀请间隔 (毫秒)",
+
 				"val": 2000,
+
 				"type": "number",
+
 				"desc": "每次邀请间隔时间"
+
 			}],
+
 			"author": "@chavyleung",
+
 			"repo": "https://github.com/chavyleung/scripts/tree/master/wps",
+
 			"script": "https://raw.githubusercontent.com/chavyleung/scripts/master/wps/wps.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/wps.png",
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/Color/wps.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "多合一签到",
+
 			"name": "京东",
+
 			"keys": ["CookieJD", "CookieJD2"],
+
 			"descs_html": [
+
 				"ceshi"
+
 			],
+
 			"settings": [{
+
 				"id": "JD_DailyBonusLog",
+
 				"name": "详细响应日志",
+
 				"val": false,
+
 				"type": "boolean",
+
 				"desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭."
+
 			}, {
+
 				"id": "JD_Crash_disable",
+
 				"name": "崩溃自动禁用",
+
 				"val": true,
+
 				"type": "boolean",
+
 				"desc": "脚本运行崩溃时(如VPN断连), 下次运行时将自动禁用相关崩溃接口(仅部分接口启用), 注: 崩溃时可能会误禁用正常接口."
+
 			}, {
+
 				"id": "JD_Retry_disable",
+
 				"name": "签到接口增强",
+
 				"val": true,
+
 				"type": "boolean",
+
 				"desc": "用于部分接口提示\"不含活动数据\"问题, 开启后会进行二次查询, 注: 可能会导致崩溃(小概率)."
+
 			}, {
+
 				"id": "JD_Follow_disable",
+
 				"name": "自动关注店铺",
+
 				"val": true,
+
 				"type": "boolean",
+
 				"desc": "部分接口签到过程可能需要关注店铺, 如介意可选择关闭."
+
 			}, {
+
 				"id": "JD_DailyBonusDisables",
+
 				"name": "签到接口禁用",
+
 				"val": "",
+
 				"type": "checkboxes",
+
 				"desc": "",
+
 				"items": [{
+
 					"key": "SpeedUp",
+
 					"label": "天天加速"
+
 				}, {
+
 					"key": "JDBean",
+
 					"label": "京东京豆"
+
 				}, {
+
 					"key": "JDEsports",
+
 					"label": "京东电竞"
+
 				}, {
+
 					"key": "JRDoll",
+
 					"label": "金融签壹"
+
 				}, {
+
 					"key": "JRTwoDoll",
+
 					"label": "金融签贰"
+
 				}, {
+
 					"key": "JRThreeDoll",
+
 					"label": "金融签叁"
+
 				}, {
+
 					"key": "JRFourDoll",
+
 					"label": "金融签肆"
+
 				}, {
+
 					"key": "JRFiveDoll",
+
 					"label": "金融签伍"
+
 				}, {
+
 					"key": "XJDouble",
+
 					"label": "现金双签"
+
 				}, {
+
 					"key": "JRSteel",
+
 					"label": "金融钢镚"
+
 				}, {
+
 					"key": "JDTurn",
+
 					"label": "京东转盘"
+
 				}, {
+
 					"key": "JDGStore",
+
 					"label": "京东超市"
+
 				}, {
+
 					"key": "JDComputer",
+
 					"label": "京东电脑"
+
 				}, {
+
 					"key": "JDCard",
+
 					"label": "京东卡包"
+
 				}, {
+
 					"key": "JD3C",
+
 					"label": "京东数码"
+
 				}, {
+
 					"key": "JDClothing",
+
 					"label": "京东服饰"
+
 				}, {
+
 					"key": "JDSuitcase",
+
 					"label": "京东箱包"
+
 				}, {
+
 					"key": "JDChild",
+
 					"label": "京东童装"
+
 				}, {
+
 					"key": "JDBaby",
+
 					"label": "京东母婴"
+
 				}, {
+
 					"key": "JDCash",
+
 					"label": "京东红包"
+
 				}, {
+
 					"key": "JDFSale",
+
 					"label": "京东闪购"
+
 				}, {
+
 					"key": "JDBook",
+
 					"label": "京东图书"
+
 				}, {
+
 					"key": "JDSchool",
+
 					"label": "京东校园"
+
 				}, {
+
 					"key": "JDUndies",
+
 					"label": "京东内衣"
+
 				}, {
+
 					"key": "JDShoes",
+
 					"label": "京东鞋靴"
+
 				}, {
+
 					"key": "JDShand",
+
 					"label": "京东二手"
+
 				}, {
+
 					"key": "JDHealth",
+
 					"label": "京东健康"
+
 				}, {
+
 					"key": "JDWomen",
+
 					"label": "京东女装"
+
 				}, {
+
 					"key": "JDSecKill",
+
 					"label": "京东秒杀"
+
 				}, {
+
 					"key": "JTDouble",
+
 					"label": "金贴双签"
+
 				}, {
+
 					"key": "JDMakeup",
+
 					"label": "京东美妆"
+
 				}, {
+
 					"key": "JDVege",
+
 					"label": "京东菜场"
+
 				}, {
+
 					"key": "JDLive",
+
 					"label": "京东生活"
+
 				}, {
+
 					"key": "JDClean",
+
 					"label": "京东清洁"
+
 				}, {
+
 					"key": "JDCare",
+
 					"label": "京东个护"
+
 				}, {
+
 					"key": "JDaccompany",
+
 					"label": "京东陪伴"
+
 				}, {
+
 					"key": "JDJewels",
+
 					"label": "京东珠宝"
+
 				}, {
+
 					"key": "JDCube",
+
 					"label": "京东魔方"
+
 				}, {
+
 					"key": "JDBuyCar",
+
 					"label": "京东汽车"
+
 				}, {
+
 					"key": "JDDouble",
+
 					"label": "京豆双签"
+
 				}, {
+
 					"key": "subsidy",
+
 					"label": "京东金贴"
+
 				}, {
+
 					"key": "JDGetCash",
+
 					"label": "京东现金"
+
 				}, {
+
 					"key": "JDJingCai",
+
 					"label": "京东精彩"
+
 				}, {
+
 					"key": "JDShake",
+
 					"label": "京东摇一摇"
+
 				}, {
+
 					"key": "Qbear",
+
 					"label": "总京豆查询"
+
 				}, {
+
 					"key": "TCash",
+
 					"label": "总红包查询"
+
 				}, {
+
 					"key": "TSteel",
+
 					"label": "总钢镚查询"
+
 				}, {
+
 					"key": "TotalSubsidy",
+
 					"label": "总金贴查询"
+
 				}, {
+
 					"key": "TotalMoney",
+
 					"label": "总现金查询"
+
 				}]
+
 			}, {
+
 				"id": "JD_DailyBonusTimeOut",
+
 				"name": "超时退出 (毫秒)",
+
 				"val": "",
+
 				"type": "number",
+
 				"placeholder": "默认无超时 (点击以展开说明)",
+
 				"desc": "按需填写, 用于由网络不稳定引起的脚本中断, 正常或越狱用户建议留空. 如QX日志出现大量\"JS Context timeout\"后脚本中断时, 建议填写6000"
+
 			}, {
+
 				"id": "JD_DailyBonusDelay",
+
 				"name": "接口延迟 (毫秒)",
+
 				"val": "",
+
 				"type": "number",
+
 				"placeholder": "默认并发无延迟 (点击以展开说明)",
+
 				"desc": "延迟作用于每个签到接口, 该参数接受随机或指定延迟(例: '2000'则表示延迟2秒; '2000-5000'则表示延迟最小2秒,最大5秒内的随机延迟), 如填入延迟则切换顺序签到(耗时较长); VPN重启或越狱用户建议填写1(顺序执行), Surge用户请注意在SurgeUI界面调整脚本超时."
+
 			}],
+
 			"scripts": [{
+
 				"name": "京东签到",
+
 				"script": "https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js"
+
 			}, {
+
 				"name": "初始化设置",
+
 				"script": "https://gist.githubusercontent.com/NobyDa/91cbe57dd50b3588a975af8922507a72/raw/JD_initial.js"
+
 			}],
+
 			"author": "@NobyDa",
+
 			"repo": "https://github.com/NobyDa/Script/tree/master/JD-DailyBonus",
+
 			"icons": ["https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/jd.png", "https://raw.githubusercontent.com/NobyDa/mini/master/Color/jd.png"]
+
 		},
+
 		{
+
 			"id": "BaiduTB",
+
 			"name": "百度贴吧",
+
 			"keys": ["CookieTB"],
+
 			"descs_html": [
+
 				"hahaha"
+
 			],
+
 			"settings": [{
+
 				"id": "BDTB_DailyBonus_Mode",
+
 				"name": "签到模式",
+
 				"val": "0",
+
 				"type": "radios",
+
 				"desc": "",
+
 				"items": [{
+
 					"key": "0",
+
 					"label": "自动切换"
+
 				}, {
+
 					"key": "1",
+
 					"label": "顺序执行"
+
 				}, {
+
 					"key": "2",
+
 					"label": "并发执行"
+
 				}]
+
 			}, {
+
 				"id": "BDTB_DailyBonus_notify",
+
 				"name": "通知汇总",
+
 				"val": "",
+
 				"type": "number",
+
 				"placeholder": "默认20 (点击以展开说明)",
+
 				"desc": "想签到几个汇总到一个通知里, 这里就填几个(比如我有13个要签到的, 这里填了5, 就会分三次推送通知)"
+
 			}],
+
 			"script": "https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js",
+
 			"author": "@sazs34, @NobyDa",
+
 			"repo": "https://github.com/sazs34/TaskConfig/blob/master/task/sign_baidu_tieba_v2.js",
+
 			"icons": ["https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/tieba.png", "https://raw.githubusercontent.com/NobyDa/mini/master/Color/tieba.png"]
+
 		},
+
 		{
+
 			"id": "scriptable",
+
 			"name": "桌面组件",
+
 			"keys": [
+
 				"scriptable"
+
 			],
+
 			"icons": [
+
 				"https://scriptablejs.gitee.io/store/favicon.ico",
+
 				"https://scriptablejs.gitee.io/store/favicon.ico"
+
 			],
+
 			"author": "@dompling",
+
 			"repo": ""
+
 		},
+
 		{
+
 			"id": "ql",
+
 			"name": "青龙 Cookie 同步",
+
 			"keys": [
+
 				"@ql.ip",
+
 				"@ql.username",
+
 				"@ql.password"
+
 			],
+
 			"settings": [{
+
 					"id": "@ql.ip",
+
 					"name": "青龙登陆的域名或IP:端口号",
+
 					"val": "",
+
 					"type": "text",
+
 					"placeholder": "111.21.0.32:5700"
+
 				},
+
 				{
+
 					"id": "@ql.username",
+
 					"name": "账号",
+
 					"val": "",
+
 					"type": "text"
+
 				},
+
 				{
+
 					"id": "@ql.password",
+
 					"name": "密码",
+
 					"val": "",
+
 					"type": "text"
+
 				}
+
 			],
+
 			"icons": ["https://qinglong.whyour.cn/qinglong.png", "https://qinglong.whyour.cn/qinglong.png"],
+
 			"author": "@dompling",
+
 			"repo": "https://github.com/dompling/Script/blob/master/jd/ql_cookie_sync.js",
+
 			"script": "https://raw.githubusercontent.com/dompling/Script/master/jd/ql_cookie_sync.js",
+
 			"desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+
 		},
+
 		{
+
 			"id": "caiyun",
+
 			"name": "彩云天气",
+
 			"keys": ["caiyun_location"],
+
 			"author": "@whyour",
+
 			"repo": "https://github.com/whyour/hundun/blob/master/quanx/caiyun.js",
+
 			"script": "https://raw.githubusercontent.com/whyour/hundun/master/quanx/caiyun.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/Orz-3/mini/master/caiyun.png",
+
 				"https://raw.githubusercontent.com/Orz-3/task/master/caiyun.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jd_ddxw",
+
 			"name": "东东小窝",
+
 			"settings": [{
+
 					"id": "xw_showLog",
+
 					"name": "日志开关",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "是否打开接口返回详情日志打印，默认关闭"
+
 				},
+
 				{
+
 					"id": "jd_wob_lottery",
+
 					"name": "窝币抽奖",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "是否消耗200窝币进行抽奖，默认不进行付费抽奖，只进行免费抽奖"
+
 				}
+
 			],
+
 			"author": "@whyour",
+
 			"repo": "https://github.com/whyour/hundun/blob/master/quanx/ddxw.js",
+
 			"script": "https://raw.githubusercontent.com/whyour/hundun/master/quanx/ddwx.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/ddxw_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/ddxw.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jdzz",
+
 			"name": "京东赚赚小程序",
+
 			"settings": [{
+
 					"id": "zz_showLog",
+
 					"name": "日志开关",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "是否打开接口返回详情日志打印，默认关闭"
+
 				},
+
 				{
+
 					"id": "jd_zzExchangePrize",
+
 					"name": "红包金额",
+
 					"val": "",
+
 					"type": "text",
+
 					"desc": "填写要兑换的红包金额，不填写不自动兑换，例如：0.25，2，5，10，50，100"
+
 				}
+
 			],
+
 			"author": "@whyour",
+
 			"repo": "https://github.com/whyour/hundun/blob/master/quanx/jdzz.js",
+
 			"script": "https://raw.githubusercontent.com/whyour/hundun/master/quanx/jdzz.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jdzz_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jdzz.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jd_ddgc",
+
 			"name": "东东工厂",
+
 			"settings": [{
+
 					"id": "dd_showLog",
+
 					"name": "日志开关",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "是否打开接口返回详情日志打印，默认关闭"
+
 				},
+
 				{
+
 					"id": "dd_autoCharge",
+
 					"name": "自动充电",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "当电量足够充满当前商品是，是否自动充电，默认不自动充电"
+
 				},
+
 				{
+
 					"id": "dd_notifyTime",
+
 					"name": "东东工厂通知时间",
+
 					"val": "",
+
 					"type": "text",
+
 					"desc": "防止频繁通知，可以设置通知时间，24小时制，比如 19 或者 19:30，多个时间以英文逗号隔开."
+
 				}
+
 			],
+
 			"author": "@whyour",
+
 			"repo": "https://github.com/whyour/hundun/blob/master/quanx/dd_factory.js",
+
 			"script": "https://raw.githubusercontent.com/whyour/hundun/master/quanx/dd_factory.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jd_factory_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jd_factory.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jx_gc",
+
 			"name": "京喜工厂",
+
 			"settings": [{
+
 					"id": "gc_showLog",
+
 					"name": "日志开关",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "是否打开接口返回详情日志打印，默认关闭"
+
 				},
+
 				{
+
 					"id": "gc_autoCharge",
+
 					"name": "自动充能",
+
 					"val": true,
+
 					"type": "boolean",
+
 					"desc": "收取能量后自动充能，默认不自动充"
+
 				},
+
 				{
+
 					"id": "gc_notifyTime",
+
 					"name": "京喜工厂通知时间",
+
 					"val": "",
+
 					"type": "text",
+
 					"desc": "防止频繁通知，可以设置通知时间，24小时制，比如 19 或者 19:30，多个时间以英文逗号隔开."
+
 				}
+
 			],
+
 			"author": "@whyour",
+
 			"repo": "https://github.com/whyour/hundun/blob/master/quanx/jx_factory.js",
+
 			"script": "https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_factory.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jdgc_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jdgc.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "jx_cfd",
+
 			"name": "京喜财富岛",
+
 			"settings": [{
+
 					"id": "cfd_showLog",
+
 					"name": "日志开关",
+
 					"val": false,
+
 					"type": "boolean",
+
 					"desc": "是否打开接口返回详情日志打印，默认关闭"
+
 				},
+
 				{
+
 					"id": "cfd_notifyTime",
+
 					"name": "京喜财富岛通知时间",
+
 					"val": "",
+
 					"type": "text",
+
 					"desc": "防止频繁通知，可以设置通知时间，24小时制，比如 19 或者 19:30，多个时间以英文逗号隔开."
+
 				}
+
 			],
+
 			"author": "@whyour",
+
 			"repo": "https://raw.githubusercontent.com/MoPoQAQ/Script/main/Me/jx_cfd.js",
+
 			"script": "https://raw.githubusercontent.com/MoPoQAQ/Script/main/Me/jx_cfd.js",
+
 			"icons": [
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jxcfd_mini.png",
+
 				"https://raw.githubusercontent.com/58xinian/icon/master/jxcfd.png"
+
 			]
+
 		},
+
 		{
+
 			"author": "@sunert",
+
 			"desc": "是否打开接口返回详情日志打印，默认关闭",
+
 			"keys": [
+
 				"sy_token_wb",
+
 				"wb_cookie",
+
 				"wb_nick"
+
 			],
+
 			"repo": "https://github.com/Sunert/Script/blob/master/Task/weibo.js",
+
 			"id": "weibo",
+
 			"script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js",
+
 			"name": "新浪微博",
+
 			"icons": [
+
 				"https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/weibo.png",
+
 				"https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Color/weibo.png"
+
 			]
+
 		},
+
 		{
+
 			"id": "PushBoxjsCookie",
+
 			"name": "elecV2p推送Cookie",
+
 			"keys": ["v2purl", "v2token"],
+
 			"settings": [{
+
 					"id": "v2purl",
+
 					"name": "主页地址",
+
 					"val": "",
+
 					"type": "text",
+
 					"desc": "请到设置查询,例子:http://192.168.1.102:12521"
+
 				},
+
 				{
+
 					"id": "v2token",
+
 					"name": "WEBHOOK TOKEN",
+
 					"val": "",
+
 					"type": "text",
+
 					"desc": "请到设置查询,例子:a8c259b2-67fe-D-7bfdf1f55cb3"
+
 				}
+
 			],
+
 			"author": "@cenbomin",
+
 			"repo": ["https://raw.githubusercontent.com/CenBoMin/GithubSync"],
+
 			"script": "https://raw.githubusercontent.com/CenBoMin/GithubSync/main/ELECV2PJS/PushBoxjsCookie_elecV2p.js",
+
 			"icons": ["https://raw.githubusercontent.com/Ariszy/Private-Script/master/img/elecv2p-mini.png", "https://raw.githubusercontent.com/Ariszy/Private-Script/master/img/elecv2p.png"]
+
 		}
+
 	]
+
 }
